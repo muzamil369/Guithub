@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>My Dating App</title>
+</head>
+<body>
+  <header>
+    <h1>My Dating App</h1>
+  </header>
+  <main>
+    <div class="profiles">
+      <!-- User profiles will be displayed here -->
+    </div>
+    <div class="chat">
+      <!-- Chat with matches will be displayed here -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 My Dating App</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+/* Basic styling for header, main content, and footer */
+header, main, footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for user profiles */
+.profiles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Styling for chat area */
+.chat {
+  border: 1px solid #ddd;
+  padding: 10px;
+  height: 300px;
+  overflow: auto;
+}
+// Sample data for user profiles
+const profiles = [
+  { name: "Alice", age: 28 },
+  { name: "Bob", age: 30 },
+  // Add more profiles...
+];
+
+// Display user profiles
+const profilesContainer = document.querySelector(".profiles");
+profiles.forEach(profile => {
+  const profileDiv = document.createElement("div");
+  profileDiv.classList.add("profile");
+  profileDiv.textContent = `${profile.name}, ${profile.age}`;
+  profilesContainer.appendChild(profileDiv);
+});
+
+// Sample chat messages
+const chatMessages = [
+  { sender: "Alice", message: "Hi Bob!" },
+  { sender: "Bob", message: "Hey Alice, how's it going?" },
+  // Add more chat messages...
+];
+
+// Display chat messages
+const chatContainer = document.querySelector(".chat");
+chatMessages.forEach(message => {
+  const messageDiv = document.createElement("div");
+  messageDiv.textContent = `${message.sender}: ${message.message}`;
+  chatContainer.appendChild(messageDiv);
+});
